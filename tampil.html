@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Detail</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="style.css">
+    <!-- <div id="halamanDetail"> -->
+    <div>
+        <h1>PEMINJAMAN BERHASIL</h1>
+        <h2>DETAIL PINJAMAN</h2>
+
+        <p>Kode Buku :<span id="tempatnomor"></span></p>
+        <p>Nama siswa :<span id="tempatname"></span></p>
+        <p>Judul :<span id="tempatjudul"></span></p>
+        <p>Tanggal :<span id="tempattanggal"></span></p>
+        <p>NO HP :<span id="tempatnohp"></span></p>
+
+    </div>
+    <script>
+        const searchParams = new URL(document.URL).searchParams;
+        const no = searchParams.get("nomor");
+        const jeneng = searchParams.get("name");
+        const jdl = searchParams.get("judul");
+        const date = searchParams.get("Tanggal");
+        const hp = searchParams.get("no");
+
+        document.getElementById("tempatnomor").innerHTML = no;
+        document.getElementById("tempatname").innerHTML = jeneng;
+        document.getElementById("tempatjudul").innerHTML = jdl;
+        document.getElementById("tempattanggal").innerHTML = date;
+        document.getElementById("tempatnohp").innerHTML = hp;
+    </script>
+</body>
+
+</html>

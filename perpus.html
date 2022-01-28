@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">WEB PERPUS</div>
+        <div class="content">
+            <div id="halamanForm">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">KODE BUKU</span>
+                        <input id="nomor" type="text" placeholder="KODE BUKU" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Nama</span>
+                        <input id="name" type="text" placeholder="Nama Siswa" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input id="Email" type="text" placeholder="Email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">NO HP </span>
+                        <input id="no" type="text" placeholder="Enter your number" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Judul </span>
+                        <input id="judul" type="text" placeholder="Judul" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Tanggal </span>
+                        <input id="Tanggal" type="datetime-local" placeholder="Tanggal" required>
+                    </div>
+                    <div class="button">
+                        <input type="submit" onclick="proses();" value="PINJAM">
+
+                    </div>
+
+                </div>
+            </div>
+            <script>
+                function proses() {
+                    const pilih = confirm("proses data ?");
+
+                    if (pilih === true) {
+                        const id = document.getElementById("nomor").value;
+                        const jenengku = document.getElementById("name").value;
+                        const email = document.getElementById("Email").value;
+                        const hp = document.getElementById("no").value
+                        const jdl = document.getElementById("judul").value
+                        const date = document.getElementById("Tanggal").value;
+
+
+                        const searchParams = new URLSearchParams({
+                            nomor: id,
+                            name: jenengku,
+                            Email: email,
+                            judul: jdl,
+                            no: hp,
+                            Tanggal: date,
+
+                        });
+                        window.location.href = "tampil.html?" + searchParams.toString();
+                    } else {
+                        alert("Oke")
+                    }
+                }
+            </script>
+
+</body>
+
+</html>
